@@ -1,0 +1,135 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        04/29/2021  14:37:04  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\YZ\KEILC51\C51\BIN\BL51.EXE main.obj TO template RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  D:\YZ\KEILC51\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\YZ\KEILC51\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  template (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         ?DT?MAIN
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     0046H     UNIT         ?PR?KEY_SCAN?MAIN
+            CODE    00D5H     000CH     UNIT         ?PR?MAIN?MAIN
+            CODE    00E1H     000BH     UNIT         ?PR?_DELAY_10US?MAIN
+            CODE    00ECH     0004H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   template (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN
+  +--> ?PR?KEY_SCAN?MAIN
+
+?PR?KEY_SCAN?MAIN
+  +--> ?PR?_DELAY_10US?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  template (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/29/2021  14:37:04  PAGE 2
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A0H.0       PUBLIC        LED1
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  B:00B0H.1       PUBLIC        KEY1
+  B:00B0H.0       PUBLIC        KEY2
+  B:00B0H.2       PUBLIC        KEY3
+  B:00B0H.3       PUBLIC        KEY4
+  D:00D8H         PUBLIC        CCON
+  C:00D5H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:00E1H         PUBLIC        _delay_10us
+  C:008FH         PUBLIC        key_scan
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAY_10US
+  D:0006H         SYMBOL        ten_us
+  C:00E1H         LINE#         34
+  C:00E1H         LINE#         35
+  C:00E1H         LINE#         36
+  C:00EBH         LINE#         37
+  -------         ENDPROC       _DELAY_10US
+  -------         PROC          KEY_SCAN
+  -------         DO            
+  D:0008H         SYMBOL        key
+  -------         ENDDO         
+  C:008FH         LINE#         45
+  C:008FH         LINE#         46
+  C:008FH         LINE#         49
+  C:00A1H         LINE#         50
+  C:00A1H         LINE#         51
+  C:00A8H         LINE#         52
+  C:00ABH         LINE#         53
+  C:00AEH         LINE#         54
+  C:00B1H         LINE#         55
+  C:00B4H         LINE#         56
+  C:00B7H         LINE#         57
+  C:00BAH         LINE#         58
+  C:00BDH         LINE#         59
+  C:00C0H         LINE#         60
+  C:00C3H         LINE#         61
+  C:00C3H         LINE#         62
+  C:00CFH         LINE#         63
+  C:00CFH         LINE#         64
+  C:00D2H         LINE#         65
+  C:00D2H         LINE#         66
+  C:00D4H         LINE#         67
+  -------         ENDPROC       KEY_SCAN
+  -------         PROC          MAIN
+  -------         DO            
+  D:0007H         SYMBOL        key
+  -------         ENDDO         
+  C:00D5H         LINE#         74
+  C:00D5H         LINE#         75
+  C:00D5H         LINE#         76
+BL51 BANKED LINKER/LOCATER V6.22                                                      04/29/2021  14:37:04  PAGE 3
+
+
+  C:00D7H         LINE#         78
+  C:00D7H         LINE#         79
+  C:00D7H         LINE#         80
+  C:00DAH         LINE#         81
+  C:00DDH         LINE#         82
+  C:00DFH         LINE#         83
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+Program Size: data=10.0 xdata=0 code=240
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

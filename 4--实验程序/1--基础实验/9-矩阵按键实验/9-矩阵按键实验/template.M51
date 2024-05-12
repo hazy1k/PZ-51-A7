@@ -1,0 +1,213 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/12/2021  14:02:17  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\YZ\KEILC51\C51\BIN\BL51.EXE main.obj TO template RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  D:\YZ\KEILC51\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\YZ\KEILC51\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  template (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0012H     UNIT         ?DT?MAIN
+            DATA    001AH     0001H     UNIT         _DATA_GROUP_
+            IDATA   001BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00DEH     UNIT         ?PR?KEY_MATRIX_RANKS_SCAN?MAIN
+            CODE    00E1H     008CH     UNIT         ?C_C51STARTUP
+            CODE    016DH     0070H     UNIT         ?PR?KEY_MATRIX_FLIP_SCAN?MAIN
+            CODE    01DDH     0017H     UNIT         ?C_INITSEG
+            CODE    01F4H     0011H     UNIT         ?PR?MAIN?MAIN
+            CODE    0205H     000FH     UNIT         ?PR?_DELAY_10US?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   template (MAIN)
+
+
+SEGMENT                                  DATA_GROUP 
+  +--> CALLED SEGMENT                  START    LENGTH
+------------------------------------------------------
+?C_C51STARTUP                          -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                          -----    -----
+  +--> ?PR?KEY_MATRIX_RANKS_SCAN?MAIN
+
+?PR?KEY_MATRIX_RANKS_SCAN?MAIN         001AH    0001H
+  +--> ?PR?_DELAY_10US?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  template (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/12/2021  14:02:17  PAGE 2
+
+
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  C:01F4H         PUBLIC        main
+  D:0009H         PUBLIC        gsmg_code
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0209H         PUBLIC        _delay_10us
+  C:0003H         PUBLIC        key_matrix_ranks_scan
+  C:016DH         PUBLIC        key_matrix_flip_scan
+  D:00D0H         PUBLIC        PSW
+  C:0205H         SYMBOL        L?0061
+  -------         PROC          L?0060
+  -------         ENDPROC       L?0060
+  C:0205H         SYMBOL        L?0061
+  -------         PROC          _DELAY_10US
+  D:0006H         SYMBOL        ten_us
+  C:0209H         LINE#         29
+  C:0209H         LINE#         30
+  C:0209H         LINE#         31
+  C:0213H         LINE#         32
+  -------         ENDPROC       _DELAY_10US
+  -------         PROC          KEY_MATRIX_RANKS_SCAN
+  -------         DO            
+  D:001AH         SYMBOL        key_value
+  -------         ENDDO         
+  C:0003H         LINE#         41
+  C:0003H         LINE#         42
+  C:0003H         LINE#         43
+  C:0006H         LINE#         45
+  C:0009H         LINE#         46
+  C:000FH         LINE#         47
+  C:000FH         LINE#         48
+  C:0012H         LINE#         49
+  C:0025H         LINE#         50
+  C:0025H         LINE#         51
+  C:002AH         LINE#         52
+  C:002FH         LINE#         53
+  C:0034H         LINE#         54
+  C:0037H         LINE#         55
+  C:0037H         LINE#         56
+  C:0037H         LINE#         57
+  C:003CH         LINE#         59
+  C:003FH         LINE#         60
+  C:0045H         LINE#         61
+  C:0045H         LINE#         62
+  C:0048H         LINE#         63
+  C:005BH         LINE#         64
+  C:005BH         LINE#         65
+  C:0060H         LINE#         66
+  C:0065H         LINE#         67
+  C:006AH         LINE#         68
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/12/2021  14:02:17  PAGE 3
+
+
+  C:006DH         LINE#         69
+  C:006DH         LINE#         70
+  C:006DH         LINE#         71
+  C:0072H         LINE#         73
+  C:0075H         LINE#         74
+  C:007BH         LINE#         75
+  C:007BH         LINE#         76
+  C:007EH         LINE#         77
+  C:0091H         LINE#         78
+  C:0091H         LINE#         79
+  C:0096H         LINE#         80
+  C:009BH         LINE#         81
+  C:00A0H         LINE#         82
+  C:00A3H         LINE#         83
+  C:00A3H         LINE#         84
+  C:00A3H         LINE#         85
+  C:00A8H         LINE#         87
+  C:00ABH         LINE#         88
+  C:00B1H         LINE#         89
+  C:00B1H         LINE#         90
+  C:00B4H         LINE#         91
+  C:00C7H         LINE#         92
+  C:00C7H         LINE#         93
+  C:00CCH         LINE#         94
+  C:00D1H         LINE#         95
+  C:00D6H         LINE#         96
+  C:00D9H         LINE#         97
+  C:00D9H         LINE#         98
+  C:00D9H         LINE#         99
+  C:00DEH         LINE#         101
+  C:00E0H         LINE#         102
+  -------         ENDPROC       KEY_MATRIX_RANKS_SCAN
+  -------         PROC          KEY_MATRIX_FLIP_SCAN
+  -------         DO            
+  D:0008H         SYMBOL        key_value
+  -------         ENDDO         
+  C:016DH         LINE#         111
+  C:016DH         LINE#         112
+  C:016DH         LINE#         115
+  C:0170H         LINE#         116
+  C:0176H         LINE#         117
+  C:0176H         LINE#         118
+  C:0179H         LINE#         119
+  C:017FH         LINE#         120
+  C:017FH         LINE#         122
+  C:0182H         LINE#         123
+  C:0194H         LINE#         124
+  C:0194H         LINE#         125
+  C:0199H         LINE#         126
+  C:019EH         LINE#         127
+  C:01A3H         LINE#         128
+  C:01A6H         LINE#         129
+  C:01A6H         LINE#         131
+  C:01A9H         LINE#         132
+  C:01BCH         LINE#         133
+  C:01BCH         LINE#         134
+  C:01C1H         LINE#         135
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/12/2021  14:02:17  PAGE 4
+
+
+  C:01C5H         LINE#         136
+  C:01C9H         LINE#         137
+  C:01CFH         LINE#         138
+  C:01CFH         LINE#         139
+  C:01D7H         LINE#         143
+  C:01DAH         LINE#         145
+  C:01DCH         LINE#         146
+  -------         ENDPROC       KEY_MATRIX_FLIP_SCAN
+  -------         PROC          MAIN
+  -------         DO            
+  D:0007H         SYMBOL        key
+  -------         ENDDO         
+  C:01F4H         LINE#         154
+  C:01F4H         LINE#         155
+  C:01F4H         LINE#         156
+  C:01F6H         LINE#         158
+  C:01F6H         LINE#         159
+  C:01F6H         LINE#         160
+  C:01F9H         LINE#         161
+  C:01FCH         LINE#         162
+  C:0203H         LINE#         163
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?KEY_MATRIX_FLIP_SCAN?MAIN
+
+Program Size: data=28.0 xdata=0 code=532
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

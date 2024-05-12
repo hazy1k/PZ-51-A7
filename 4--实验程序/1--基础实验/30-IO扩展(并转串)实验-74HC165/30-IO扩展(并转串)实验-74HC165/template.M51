@@ -1,0 +1,144 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/14/2021  14:51:28  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\YZ\KEILC51\C51\BIN\BL51.EXE main.obj TO template RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  D:\YZ\KEILC51\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  template (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0030H     UNIT         ?PR?HC165_READ_DATA?MAIN
+            CODE    0033H     001EH     UNIT         ?PR?_DELAY_MS?MAIN
+            CODE    0051H     0010H     UNIT         ?PR?MAIN?MAIN
+            CODE    0061H     000CH     UNIT         ?C_C51STARTUP
+            CODE    006DH     000BH     UNIT         ?PR?_DELAY_10US?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   template (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?PR?HC165_READ_DATA?MAIN
+
+?PR?HC165_READ_DATA?MAIN
+  +--> ?PR?_DELAY_10US?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  template (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/14/2021  14:51:28  PAGE 2
+
+
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  B:0090H.7       PUBLIC        HC165_QH
+  D:00D8H         PUBLIC        CCON
+  C:0051H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  B:0090H.5       PUBLIC        HC165_SHLD
+  D:0088H         PUBLIC        TCON
+  C:006DH         PUBLIC        _delay_10us
+  C:0033H         PUBLIC        _delay_ms
+  B:0090H.6       PUBLIC        HC165_CLK
+  C:0003H         PUBLIC        hc165_read_data
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAY_10US
+  D:0006H         SYMBOL        ten_us
+  C:006DH         LINE#         29
+  C:006DH         LINE#         30
+  C:006DH         LINE#         31
+  C:0077H         LINE#         32
+  -------         ENDPROC       _DELAY_10US
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:0033H         LINE#         40
+  C:0033H         LINE#         41
+  C:0033H         LINE#         43
+  C:003CH         LINE#         44
+  C:0050H         LINE#         45
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          HC165_READ_DATA
+  -------         DO            
+  D:0005H         SYMBOL        i
+  D:0003H         SYMBOL        value
+  -------         ENDDO         
+  C:0003H         LINE#         53
+  C:0003H         LINE#         54
+  C:0003H         LINE#         55
+  C:0005H         LINE#         56
+  C:0006H         LINE#         58
+  C:0008H         LINE#         59
+  C:000EH         LINE#         60
+  C:0010H         LINE#         62
+  C:0010H         LINE#         63
+  C:0010H         LINE#         64
+  C:0014H         LINE#         65
+  C:0016H         LINE#         66
+  C:001DH         LINE#         67
+  C:0023H         LINE#         68
+  C:0025H         LINE#         69
+  C:002CH         LINE#         70
+  C:0030H         LINE#         71
+  C:0032H         LINE#         72
+  -------         ENDPROC       HC165_READ_DATA
+  -------         PROC          MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/14/2021  14:51:28  PAGE 3
+
+
+  -------         DO            
+  D:0007H         SYMBOL        value
+  -------         ENDDO         
+  C:0051H         LINE#         81
+  C:0051H         LINE#         82
+  C:0051H         LINE#         83
+  C:0053H         LINE#         85
+  C:0056H         LINE#         86
+  C:0056H         LINE#         87
+  C:0056H         LINE#         88
+  C:0059H         LINE#         89
+  C:005FH         LINE#         90
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_MS?MAIN
+
+Program Size: data=9.0 xdata=0 code=120
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
